@@ -22,7 +22,7 @@ Your installation folder should look something like this:
 -logs
 -screenshots
 -mods
- |-NewSpecimenREDUX_modpack-main        [<--- This is where you extracted the zip!]
+ |-NewSpecimenREDUX_modpack-public-main        [<--- This is where you extracted the zip!]
 -Funkin.exe
 ```
 
