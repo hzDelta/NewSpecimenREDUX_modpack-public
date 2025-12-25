@@ -1,0 +1,123 @@
+import funkin.modding.events.ScriptEvent;
+import funkin.play.GameOverSubState;
+import funkin.play.PauseSubState;
+import funkin.play.PlayState;
+import funkin.play.stage.ScriptedStage;
+
+import flixel.FlxG;
+
+class SkeldNavStage extends ScriptedStage {
+
+    private var playerID:String = '';
+
+    #if FEATURE_DISCORD_RPC
+    private static inline var RPC_BASE_URL:String = 'https://github.com/hzDelta/NewSpecimenREDUX_modpack-public/blob/main/art/discord/';
+    private final reduxOpponents:Array<String> = ['purpleCrewmate', 'brownImpostor'];
+    #end
+
+    private final camHUD_Debug:Bool = false;
+    // ^^ used for getting clean screenshots for the mod's GameBanana page; see function onUpdate()
+
+    public function new() {
+
+        super('skeldNavHall');
+
+    }
+
+    override function onCreate(event:ScriptEvent):Void {
+
+        super.onCreate(event);
+
+    }
+
+    override function onSongLoaded(event:SongLoadScriptEvent):Void {
+
+        super.onSongLoaded(event);
+
+        #if FEATURE_DISCORD_RPC
+        doRPCSwap();
+        #end
+
+        var hijackedSign = getNamedProp('hijackedSign');
+        if (PlayState.instance.currentSong?.id != 'hijacked' && hijackedSign != null) hijackedSign.visible = false;
+
+        var bf = PlayState.instance.currentStage?.getBoyfriend();
+
+        if (bf == null) {
+
+            trace('[ERROR] Player is \'null\', aborting!');
+            return;
+
+        }
+
+        playerID = bf.characterId;
+        trace('playerID = '+playerID+'.');
+
+        trace('[INFORMATION] Song loaded! Attempting pause music swap.');
+        doSubStateMusicSwap('Pause');
+
+    }
+
+    override function onGameOver(event:ScriptEvent):Void {
+
+        super.onGameOver(event);
+
+        trace('[INFORMATION] Player died! Attempting game over music swap.');
+        doSubStateMusicSwap('Game over');
+
+    }
+
+    override function onUpdate(event:UpdateScriptEvent):Void {
+
+        if (FlxG.keys.justPressed.TWO && camHUD_Debug) {
+
+            PlayState.instance.camHUD?.alpha = 0;
+
+        }
+
+        if (FlxG.keys.justPressed.ONE && camHUD_Debug) {
+
+            PlayState.instance.camHUD?.alpha = 1;
+
+        }
+
+    }
+
+    private function doSubStateMusicSwap(context:String):Void {
+
+        switch (playerID) {
+
+            case 'bf':
+
+                trace('[INFORMATION] '+context+' music swap successful!');
+                if (context == 'Pause') PauseSubState.musicSuffix = '-skeld';
+                else if (context == 'Game over') GameOverSubState.musicSuffix = '-skeld';
+
+            case 'pico-playable':
+
+                trace('[WARNING] Playing as Pico! Defaulting to his variant.');
+
+            default:
+
+                trace('[ERROR] '+context+' music swap failed! Is playerID not \'bf\'?');
+
+        }
+
+    }
+
+    #if FEATURE_DISCORD_RPC
+    private function doRPCSwap():Void {
+
+        var metadataAlbum:String = PlayState.instance.currentChart?.album;
+        var metadataOpponent:String = PlayState.instance.currentChart.characters?.opponent;
+
+        if (metadataAlbum != null && metadataAlbum == 'redux')
+            PlayState.instance.discordRPCAlbum = RPC_BASE_URL+'album/'+metadataAlbum+'.jpg?raw=true';
+
+        if (metadataOpponent != null && reduxOpponents.contains(metadataOpponent))
+            PlayState.instance.discordRPCIcon = RPC_BASE_URL+'icons/'+metadataOpponent+'.png?raw=true';
+
+    }
+    #end
+    
+}

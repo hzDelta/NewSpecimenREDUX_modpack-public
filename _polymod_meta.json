@@ -1,0 +1,19 @@
+{
+  "title": "New Specimen REDUX",
+  "description": "/!\\ DON'T COMBINE WITH OTHER MODS /!\\\n\nFor API v0.7.0 and newer.",
+  "contributors": [
+    {
+      "name": "hzDelta",
+      "role": "Musician, Artist, Programmer, Charter",
+      "url": "https://hzdelta.carrd.co/"
+    },
+    {
+      "name": "Carsten23455",
+      "role": "Playtester (PC)",
+      "url": "https://github.com/Carsten23455/"
+    }
+  ],
+  "api_version": "0.7.0",
+  "mod_version": "1.0.0",
+  "license": "Apache-2.0"
+}

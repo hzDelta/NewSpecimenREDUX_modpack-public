@@ -1,0 +1,65 @@
+{
+  "version": "2.2.4",
+  "songName": "Hijacked",
+  "artist": "hzDelta",
+  "charter": "hzDelta",
+  "divisions": 96,
+  "looped": false,
+  "offsets": {
+    "instrumental": 0,
+    "altInstrumentals": {    },
+    "vocals": {    },
+    "altVocals": {    }
+  },
+  "playData": {
+    "songVariations": [    ],
+    "difficulties": [
+      "easy",
+      "normal",
+      "hard"
+    ],
+    "characters": {
+      "player": "bf",
+      "girlfriend": "gf",
+      "opponent": "brownImpostor",
+      "instrumental": "",
+      "altInstrumentals": [
+        "scrapped",
+        "legacy"
+      ],
+      "opponentVocals": [
+        "brown"
+      ],
+      "playerVocals": [
+        "bf"
+      ]
+    },
+    "stage": "skeldNavHall",
+    "noteStyle": "funkin",
+    "ratings": {
+      "easy": 5,
+      "hard": 7,
+      "normal": 6
+    },
+    "album": "nsredux",
+    "previewStart": 32000,
+    "previewEnd": 42700
+  },
+  "generatedBy": "Peggle Dinners",
+  "timeFormat": "ms",
+  "timeChanges": [
+    {
+      "t": 0,
+      "b": 0,
+      "bpm": 180,
+      "n": 4,
+      "d": 4,
+      "bt": [
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ]
+}

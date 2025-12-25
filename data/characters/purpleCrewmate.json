@@ -1,0 +1,104 @@
+{
+	"version": "1.0.0",
+	"renderType": "sparrow",
+	"offsets": [
+		0,
+		-5
+	],
+	"danceEvery": 1,
+	"scale": 1,
+	"name": "Purple Crewmate",
+	"cameraOffsets": [
+		25,
+		25
+	],
+	"flipX": false,
+	"startingAnimation": "idle",
+	"isPixel": false,
+	"singTime": 8,
+	"flipY": false,
+	"healthIcon": {
+		"isPixel": false,
+		"offsets": [
+			0,
+			0
+		],
+		"scale": 1,
+		"id": "purple",
+		"flipX": false
+	},
+	"assetPath": "characters/purpleCrewmate",
+	"generatedBy": "Nova Character Editor v3.0.1",
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"frameIndices": [],
+			"prefix": "sing left",
+			"name": "singLEFT",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"frameIndices": [],
+			"prefix": "idle bop",
+			"name": "idle",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [
+				-60,
+				-10
+			],
+			"frameIndices": [],
+			"prefix": "sing right",
+			"name": "singRIGHT",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [
+				50,
+				10
+			],
+			"frameIndices": [],
+			"prefix": "sing up",
+			"name": "singUP",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [
+				20,
+				-120
+			],
+			"frameIndices": [],
+			"prefix": "sing down",
+			"name": "singDOWN",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		}
+	]
+}

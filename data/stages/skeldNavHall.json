@@ -1,0 +1,49 @@
+{
+  "version": "1.0.1",
+  "name": "Navigation Hall",
+  "cameraZoom": 0.8,
+  "props": [
+    {
+      "zIndex": 25,
+      "position": [115, 230],
+      "scale": [1, 1],
+      "name": "bgBack",
+      "assetPath": "stages/skeldNavHall/bg_backLayer",
+      "scroll": [0.95, 1]
+    },
+    {
+      "zIndex": 50,
+      "position": [0, 0],
+      "scale": [1, 1],
+      "name": "bgFront",
+      "assetPath": "stages/skeldNavHall/bg_frontLayer",
+      "scroll": [1, 1]
+    },
+    {
+      "zIndex": 75,
+      "position": [471, 721],
+      "scale": [1, 1],
+      "name": "hijackedSign",
+      "assetPath": "stages/skeldNavHall/hijackedSign",
+      "scroll": [1, 1]
+    }
+  ],
+  "characters": {
+    "bf": {
+      "zIndex": 300,
+      "position": [1760, 1070],
+      "cameraOffsets": [-100, -100]
+    },
+    "dad": {
+      "zIndex": 200,
+      "position": [800, 1088],
+      "cameraOffsets": [150, -100]
+    },
+    "gf": {
+      "zIndex": 100,
+      "cameraOffsets": [0, 0],
+      "position": [1279, 980]
+    }
+  }
+}
+

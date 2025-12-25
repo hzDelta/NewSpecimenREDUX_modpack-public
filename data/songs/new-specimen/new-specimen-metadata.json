@@ -1,0 +1,60 @@
+{
+ "version": "2.2.4",
+ "songName": "New Specimen",
+ "artist": "hzDelta",
+ "charter": "hzDelta",
+ "divisions": 96,
+ "looped": false,
+ "offsets": {
+  "instrumental": 0,
+  "altInstrumentals": {  },
+  "vocals": {  },
+  "altVocals": {  }
+ },
+ "playData": {
+  "songVariations": [  ],
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "gf",
+   "opponent": "purpleCrewmate",
+   "instrumental": "",
+   "altInstrumentals": [
+    "scrapped",
+    "legacy"
+   ],
+   "opponentVocals": [
+    "purple"
+   ],
+   "playerVocals": [
+    "bf"
+   ]
+  },
+  "stage": "skeldNavHall",
+  "noteStyle": "funkin",
+  "ratings": {
+   "easy": 3,
+   "hard": 5,
+   "normal": 4
+  },
+  "album": "nsredux",
+  "previewStart": 0,
+  "previewEnd": 0
+ },
+ "generatedBy": "Isaac and his Mother",
+ "timeFormat": "ms",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 150,
+   "n": 4,
+   "d": 4,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

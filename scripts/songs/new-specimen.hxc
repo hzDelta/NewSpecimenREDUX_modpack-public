@@ -1,0 +1,100 @@
+import funkin.graphics.FunkinSprite;
+import funkin.modding.events.ScriptEvent;
+import funkin.play.PlayState;
+import funkin.play.song.ScriptedSong;
+
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import flixel.util.FlxColor;
+
+class NewSpecimenRedux extends ScriptedSong {
+
+    var introBlack:FunkinSprite;
+    var introTween:FlxTween;
+    var doIntroTween:Bool = false;
+
+    public function new() {
+
+        super('new-specimen');
+
+    }
+
+    override function onCreate(event:ScriptEvent):Void {
+
+        super.onCreate(event);
+
+    }
+
+    override function onSongLoaded(event:SongLoadScriptEvent):Void {
+
+        super.onSongLoaded(event);
+
+        doIntroTween = false;
+        
+        changeCamAlpha(1);
+
+        introBlack = FunkinSprite.create(0, 0, 'introBlack');
+        introBlack.makeSolidColor(2560, 1440, FlxColor.BLACK);
+        introBlack.zIndex = 301;
+        introBlack.camera = PlayState.instance?.camGame;
+        if (introBlack.alpha != 1) introBlack.alpha = 1;
+        PlayState.instance?.add(introBlack);
+
+        introTween = FlxTween.tween(introBlack, {alpha: 0}, 7, {tween: FlxEase.linear});
+        introTween.active = doIntroTween;
+
+    }
+
+    override function onSongStart(event:ScriptEvent):Void {
+
+        doIntroTween = true;
+
+    }
+
+    override function onBeatHit(event:Int):Void {
+
+        super.onBeatHit(event);
+
+        switch (event.beat) {
+
+            case 1:
+                introTween.active = doIntroTween;
+
+            case 272:
+                changeCamAlpha(0);
+
+        }
+
+    }
+
+    override function onGameOver(event:ScriptEvent):Void {
+
+        super.onGameOver(event);
+
+        changeCamAlpha(1);
+
+    }
+
+    override function onPause(event:PauseScriptEvent):Void {
+
+        super.onPause(event);
+
+        if (introTween.active) introTween.active = false;
+
+    }
+
+    override function onResume(event:ScriptEvent):Void {
+
+        super.onResume(event);
+
+        if (!introTween.active) introTween.active = doIntroTween;
+
+    }
+
+    private function changeCamAlpha(alpha:Float):Void {
+
+        for (cams in [PlayState.instance.camGame, PlayState.instance.camHUD]) cams.alpha = alpha;
+
+    }
+
+}

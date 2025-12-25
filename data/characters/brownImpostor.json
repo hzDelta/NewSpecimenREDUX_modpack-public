@@ -1,0 +1,104 @@
+{
+	"version": "1.0.0",
+	"renderType": "sparrow",
+	"offsets": [
+		0,
+		0
+	],
+	"danceEvery": 1,
+	"scale": 1,
+	"name": "Brown Impostor",
+	"cameraOffsets": [
+		25,
+		65
+	],
+	"flipX": false,
+	"startingAnimation": "idle",
+	"isPixel": false,
+	"singTime": 8,
+	"flipY": false,
+	"healthIcon": {
+		"isPixel": false,
+		"offsets": [
+			0,
+			0
+		],
+		"scale": 1,
+		"id": "brown",
+		"flipX": false
+	},
+	"assetPath": "characters/brownImpostor",
+	"generatedBy": "Nova Character Editor v3.0.1",
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"frameIndices": [],
+			"prefix": "idle bop",
+			"name": "idle",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [
+				5,
+				126
+			],
+			"frameIndices": [],
+			"prefix": "sing up",
+			"name": "singUP",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [
+				-10,
+				-23
+			],
+			"frameIndices": [],
+			"prefix": "sing down",
+			"name": "singDOWN",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [
+				120,
+				4
+			],
+			"frameIndices": [],
+			"prefix": "sing left",
+			"name": "singLEFT",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [
+				-20,
+				-10
+			],
+			"frameIndices": [],
+			"prefix": "sing right",
+			"name": "singRIGHT",
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+			"frameRate": 24,
+			"assetPath": null
+		}
+	]
+}

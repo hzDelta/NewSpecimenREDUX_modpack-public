@@ -1,0 +1,147 @@
+import funkin.FunkinMemory;
+import funkin.Paths;
+import funkin.audio.FunkinSound;
+import funkin.graphics.FunkinSprite;
+import funkin.modding.events.ScriptEvent;
+import funkin.play.PlayState;
+import funkin.play.PlayStatePlaylist;
+import funkin.play.song.ScriptedSong;
+import funkin.util.HapticUtil;
+
+import flixel.FlxG;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
+import flixel.util.FlxTimerManager;
+
+class HijackedRedux extends ScriptedSong {
+
+    final DO_THE_DAMN_TEASER:Bool = true;
+    // ^^ if you're sick of seeing that post-song cutscene at the end of the SKELD SCUFFLE level; just set this value to false
+
+    public function new() {
+
+        super('hijacked');
+
+    }
+
+    final TEASERIMG_PATH:String = 'hijacked_panicTeaser';
+    // ^^ shared/images/hijacked_panicTeaser
+
+    var endBG:FunkinSprite;
+    var teaserSound:FunkinSound;
+    var teaserImg:FunkinSprite;
+    var hasPlayedCutscene:Bool;
+    var initStuff:Bool;
+    var hijackedOutroManager:FlxTimerManager;
+
+    override function onCreate(event:ScriptEvent):Void {
+
+        super.onCreate(event);
+        if (!DO_THE_DAMN_TEASER) return;
+
+        hasPlayedCutscene = false;
+
+        if (initStuff == null) {
+
+            FunkinMemory.permanentCacheSound(Paths.image(TEASERIMG_PATH));
+            FunkinMemory.permanentCacheSound(Paths.sound('hijacked_panicTeaser'));
+
+            teaserSound = FunkinSound.load(Paths.sound('hijacked_panicTeaser'), 0.75, false, true);
+
+            initStuff = true;
+
+        }
+
+    }
+
+    override function onUpdate(event:UpdateScriptEvent):Void {
+
+        super.onUpdate(event);
+        if (!DO_THE_DAMN_TEASER) return;
+
+        if (PlayState.instance.isInCutscene && hijackedOutroManager != null) hijackedOutroManager.update(event.elapsed);
+
+    }
+
+    override function onSongEnd(event:ScriptEvent):Void {
+
+        super.onSongEnd(event);
+        if (!DO_THE_DAMN_TEASER) return;
+
+        if (!hasPlayedCutscene && PlayStatePlaylist.isStoryMode) {
+
+            event.cancel();
+
+            hasPlayedCutscene = true;
+            PlayState.instance.isInCutscene = true;
+
+            endCutscene();
+
+        }
+        else hasPlayedCutscene = false;
+
+    }
+
+    private function endCutscene():Void {
+
+        // taking some code from my Swipe v-slice port lol
+
+        hijackedOutroManager = new FlxTimerManager();
+
+        endBG = new FunkinSprite(0, 0);
+        endBG.cameras = [PlayState.instance.camCutscene];
+        endBG.makeSolidColor(FlxG.width, FlxG.height, FlxColor.BLACK);
+        endBG.zIndex = 301;
+        endBG.alpha = 0;
+        PlayState.instance.add(endBG);
+        PlayState.instance.refresh();
+
+        teaserImg = new FunkinSprite(0, 0);
+        teaserImg.loadTexture(TEASERIMG_PATH);
+        teaserImg.screenCenter();
+        teaserImg.scale.set(0.75, 0.75);
+        teaserImg.cameras = [PlayState.instance.camCutscene];
+        teaserImg.zIndex = 302;
+        teaserImg.visible = false;
+        PlayState.instance.add(teaserImg);
+        PlayState.instance.refresh();
+
+        FlxTween.tween(endBG, {alpha: 1}, 2, {ease: FlxEase.expoOut});
+
+        PlayState.instance.tweenCameraZoom(1.5, 2, false, FlxEase.expoOut);
+
+        new FlxTimer(hijackedOutroManager).start(25 / 24, _ -> {
+
+            if (teaserSound != null) teaserSound.play(false);
+            teaserImg.visible = true;
+
+            HapticUtil.vibrate(0, 0.05, 1);
+
+        });
+
+        new FlxTimer(hijackedOutroManager).start(96 / 24, _ -> {
+
+            FlxTween.tween(teaserImg, {alpha: 0}, 1.5, {ease: FlxEase.linear});
+
+        });
+
+        new FlxTimer(hijackedOutroManager).start(136 / 24, _ -> {
+
+            PlayState.instance.endSong(true);
+
+        });
+
+    }
+
+    override function onDestroy(event:ScriptEvent):Void {
+
+        super.onDestroy(event);
+        if (!DO_THE_DAMN_TEASER) return;
+
+        initStuff = null;
+
+    }
+
+}

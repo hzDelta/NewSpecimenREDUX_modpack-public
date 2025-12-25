@@ -1,0 +1,100 @@
+import funkin.FunkinMemory;
+import funkin.Paths;
+import funkin.Preferences;
+import funkin.graphics.FunkinSprite;
+import funkin.mobile.input.ControlsHandler;
+import funkin.modding.events.ScriptEvent;
+import funkin.modding.module.Module;
+import funkin.play.PlayState;
+import funkin.util.Constants;
+
+import flixel.FlxG;
+import flixel.ui.FlxBar;
+import flixel.ui.FlxBarFillDirection;
+
+class PanicHUD_Lite extends Module {
+
+    final CHANGE_HEALTHBAR_COLORS:Bool = true;
+
+    /*
+    *   DON'T MESS WITH ANYTHING BELOW UNLESS YOU KNOW WHAT YOU'RE DOING!
+    */
+
+    final AMONG_US_BAR_COLORS:Array<Dynamic> = [0xFF1A591C, 0xFF37EF3E];
+
+    var nsReduxTracks:Array<String> = ['new-specimen', 'hijacked'];
+    public var panicHealthBar:FlxBar;
+    public var panicBarBG:FunkinSprite;
+    var initHUD:Bool = false;
+
+    public function new() {
+        
+        super('PanicHUD-Lite', 1);
+
+    }
+
+    public override function onCreate(event:ScriptEvent):Void {
+
+        super.onCreate(event);
+
+        trace('[INFO.] Loading panicBarBG...');
+        FunkinMemory.permanentCacheTexture(Paths.image('panicBarBG'));
+        trace('[INFO.] Loaded panicBarBG!');
+
+    }
+
+    public override function onSongLoaded(event:SongLoadScriptEvent):Void {
+
+        super.onSongLoaded(event);
+
+        if (PlayState.instance == null || PlayState.instance.currentSong == null || PlayState.instance.currentStage == null || initHUD) return;
+        
+        if (PlayState.instance.currentSong?.id == null) {
+            trace('[WARN.] Song ID is null. Aborting!');
+            return;
+        }
+
+        if (!nsReduxTracks.contains(PlayState.instance.currentSong?.id)) {
+            trace('[WARN.] Song ID \''+PlayState.instance.currentSong?.id+'\' is not in array \'nsReduxTracks\'. Aborting!');
+            return;
+        }
+
+        if (PlayState.instance.healthBar == null || PlayState.instance.healthBarBG == null) return;
+        for (obj in [PlayState.instance.healthBar, PlayState.instance.healthBarBG]) obj.visible = false;
+        
+        panicBarBG = FunkinSprite.create(0, PlayState.instance.healthBar.y - 20, 'panicBarBG');
+        panicBarBG.camera = PlayState.instance.camHUD;
+        panicBarBG.zIndex = 802;
+        panicBarBG.screenCenter(0x01);
+        panicBarBG.scale.set(1, 1);
+
+        panicHealthBar = new FlxBar(0, panicBarBG.y, FlxBarFillDirection.RIGHT_TO_LEFT, 1200, 80, PlayState.instance, 'healthLerp', 0, 2, false);
+        panicHealthBar.camera = PlayState.instance.camHUD;
+        panicHealthBar.y -= 24;
+        panicHealthBar.createFilledBar(
+            !CHANGE_HEALTHBAR_COLORS ? Constants.COLOR_HEALTH_BAR_RED : AMONG_US_BAR_COLORS[0],
+            !CHANGE_HEALTHBAR_COLORS ? Constants.COLOR_HEALTH_BAR_GREEN : AMONG_US_BAR_COLORS[1]
+        );
+        panicHealthBar.zIndex = 801;
+        panicHealthBar.screenCenter(0x01);
+        panicHealthBar.scale.set(0.5, 0.25);
+
+        for (obj in [panicHealthBar, panicBarBG]) PlayState.instance.add(obj);
+
+        PlayState.instance.scoreText.size = 22;
+        PlayState.instance.scoreText.font = Paths.font('arial.ttf');
+        PlayState.instance.scoreText.zIndex = 852;
+        PlayState.instance.scoreText.borderSize = 1.15;
+
+        initHUD = true;
+
+    }
+
+    public override function onDestroy(event:ScriptEvent):Void {
+
+        super.onDestroy(event);
+        initHUD = false;
+
+    }
+    
+}
