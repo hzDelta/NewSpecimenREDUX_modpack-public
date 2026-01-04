@@ -26,6 +26,7 @@ class PanicHUD_Lite extends Module {
     public var panicHealthBar:FlxBar;
     public var panicBarBG:FunkinSprite;
     var initHUD:Bool = false;
+    var barCached:Bool = false;
 
     public function new() {
         
@@ -37,9 +38,15 @@ class PanicHUD_Lite extends Module {
 
         super.onCreate(event);
 
-        trace('[INFO.] Loading panicBarBG...');
-        FunkinMemory.permanentCacheTexture(Paths.image('panicBarBG'));
-        trace('[INFO.] Loaded panicBarBG!');
+        if (barCached == false) {
+
+            trace('[INFO.] Loading panicBarBG...');
+            FunkinMemory.permanentCacheTexture(Paths.image('panicBarBG'));
+            trace('[INFO.] Loaded panicBarBG!');
+
+            barCached = true;
+
+        }
 
     }
 
