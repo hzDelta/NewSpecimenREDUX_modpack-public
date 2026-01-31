@@ -34,7 +34,7 @@ Feel free to remove the `art` folder along with the `.gitattributes` and `README
     - ~~December 25th, 2025~~ *Out Now!*
 
 - v2.0.0 - Legacy Tracks + Official Mobile Port
-    - January, 2026
+    - February, 2026
 
 - v3.0.0 - Remix Pack 1
     - TBA
