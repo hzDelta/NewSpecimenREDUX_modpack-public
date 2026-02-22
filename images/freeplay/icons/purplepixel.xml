@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="purpleCrewmatepixel.png">
+<TextureAtlas imagePath="purplepixel.png">
 	<!-- Created using the Spritesheet and XML generator -->
 	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
 	<SubTexture name="idle0000" x="37" y="48" width="37" height="47" frameX="-6" frameY="-1" frameWidth="50" frameHeight="50"/>

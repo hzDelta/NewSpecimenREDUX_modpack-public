@@ -9,9 +9,11 @@ import flixel.util.FlxColor;
 
 class NewSpecimenRedux extends ScriptedSong {
 
-    var introBlack:FunkinSprite;
-    var introTween:FlxTween;
-    var doIntroTween:Bool = false;
+    private var introBlack:FunkinSprite;
+    private var introTween:FlxTween;
+    private var doIntroTween:Bool = false;
+    private var playback:Float;
+    private var introTweenTime:Float = 7.0;
 
     public function new() {
 
@@ -40,7 +42,10 @@ class NewSpecimenRedux extends ScriptedSong {
         if (introBlack.alpha != 1) introBlack.alpha = 1;
         PlayState.instance?.add(introBlack);
 
-        introTween = FlxTween.tween(introBlack, {alpha: 0}, 7, {tween: FlxEase.linear});
+        playback = PlayState.instance?.playbackRate;
+        if (playback != null && playback >= 0.0) introTweenTime /= playback;
+
+        introTween = FlxTween.tween(introBlack, {alpha: 0}, introTweenTime, {tween: FlxEase.linear});
         introTween.active = doIntroTween;
 
     }

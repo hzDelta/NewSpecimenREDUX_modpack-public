@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="legacyPurpCrew.png">
+<SubTexture name="specimen idle0000" x="0" y="1300" width="450" height="418" frameX="-197" frameY="-304" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen idle0001" x="1373" y="853" width="433" height="419" frameX="-197" frameY="-303" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen idle0002" x="1373" y="428" width="420" height="425" frameX="-197" frameY="-297" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen idle0003" x="0" y="442" width="416" height="430" frameX="-196" frameY="-292" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen idle0004" x="926" y="430" width="413" height="428" frameX="-196" frameY="-294" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen singDOWN0000" x="855" y="1300" width="400" height="400" frameX="-217" frameY="-334" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen singDOWN0001" x="450" y="1300" width="405" height="407" frameX="-220" frameY="-327" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen hey0000" x="416" y="442" width="472" height="430" frameX="-121" frameY="-292" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen hey0001" x="0" y="872" width="466" height="428" frameX="-130" frameY="-294" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen singLEFT0000" x="926" y="0" width="447" height="430" frameX="-82" frameY="-295" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen singLEFT0001" x="466" y="872" width="444" height="428" frameX="-91" frameY="-296" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen singRIGHT0000" x="456" y="0" width="470" height="432" frameX="-207" frameY="-291" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen singRIGHT0001" x="910" y="872" width="458" height="428" frameX="-196" frameY="-294" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen singUP0000" x="0" y="0" width="456" height="442" frameX="-162" frameY="-283" frameWidth="768" frameHeight="768" />
+<SubTexture name="specimen singUP0001" x="1373" y="0" width="452" height="428" frameX="-167" frameY="-294" frameWidth="768" frameHeight="768" />
+</TextureAtlas>

@@ -21,17 +21,17 @@
     "characters": {
       "player": "bf",
       "girlfriend": "gf",
-      "opponent": "brownImpostor",
+      "opponent": "brown",
       "instrumental": "",
       "altInstrumentals": [
         "scrapped",
         "legacy"
       ],
       "opponentVocals": [
-        "brown"
+        "Opponent"
       ],
       "playerVocals": [
-        "bf"
+        "Player"
       ]
     },
     "stage": "skeldNavHall",
@@ -45,7 +45,7 @@
     "previewStart": 32000,
     "previewEnd": 42700
   },
-  "generatedBy": "Peggle Dinners",
+  "generatedBy": "Friday Night Funkin' - v0.6.4",
   "timeFormat": "ms",
   "timeChanges": [
     {

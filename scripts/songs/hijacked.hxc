@@ -17,12 +17,14 @@ import flixel.util.FlxTimerManager;
 
 class HijackedRedux extends ScriptedSong {
 
-    final DO_THE_DAMN_TEASER:Bool = true;
-    // ^^ if you're sick of seeing that post-song cutscene at the end of the SKELD SCUFFLE level; just set this value to false
+    final DO_TEASER:Bool = true;
+    // ^^ if you're sick of seeing that post-song cutscene at the end of the SKELD SCUFFLE level; just set this value to false. Or just play through Freeplay lol
 
     public function new() {
 
         super('hijacked');
+
+        FlxG.signals.postGameStart.addOnce(() -> initScript = false);
 
     }
 
@@ -33,17 +35,18 @@ class HijackedRedux extends ScriptedSong {
     var teaserSound:FunkinSound;
     var teaserImg:FunkinSprite;
     var hasPlayedCutscene:Bool;
-    var initStuff:Bool;
+    var initStuff:Bool = false;
     var hijackedOutroManager:FlxTimerManager;
 
     override function onCreate(event:ScriptEvent):Void {
 
         super.onCreate(event);
-        if (!DO_THE_DAMN_TEASER) return;
+
+        if (!DO_TEASER) return;
 
         hasPlayedCutscene = false;
 
-        if (initStuff == null) {
+        if (!initStuff) {
 
             FunkinMemory.permanentCacheSound(Paths.image(TEASERIMG_PATH));
             FunkinMemory.permanentCacheSound(Paths.sound('hijacked_panicTeaser'));
@@ -59,7 +62,8 @@ class HijackedRedux extends ScriptedSong {
     override function onUpdate(event:UpdateScriptEvent):Void {
 
         super.onUpdate(event);
-        if (!DO_THE_DAMN_TEASER) return;
+
+        if (!DO_TEASER) return;
 
         if (PlayState.instance.isInCutscene && hijackedOutroManager != null) hijackedOutroManager.update(event.elapsed);
 
@@ -68,7 +72,8 @@ class HijackedRedux extends ScriptedSong {
     override function onSongEnd(event:ScriptEvent):Void {
 
         super.onSongEnd(event);
-        if (!DO_THE_DAMN_TEASER) return;
+
+        if (!DO_TEASER) return;
 
         if (!hasPlayedCutscene && PlayStatePlaylist.isStoryMode) {
 
@@ -80,6 +85,7 @@ class HijackedRedux extends ScriptedSong {
             endCutscene();
 
         }
+
         else hasPlayedCutscene = false;
 
     }
@@ -132,15 +138,6 @@ class HijackedRedux extends ScriptedSong {
             PlayState.instance.endSong(true);
 
         });
-
-    }
-
-    override function onDestroy(event:ScriptEvent):Void {
-
-        super.onDestroy(event);
-        if (!DO_THE_DAMN_TEASER) return;
-
-        initStuff = null;
 
     }
 

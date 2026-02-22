@@ -1,0 +1,106 @@
+{
+    "version": "1.0.0",
+    "renderType": "sparrow",
+    "name": "Purple Crewmate (Legacy)",
+    "generatedBy": "Manual (by hzDelta)",
+    "startingAnimation": "idle",
+    "assetPath": "characters/legacyPurpCrew",
+
+    "offsets": [0, 0],
+    "cameraOffsets": [50, 175],
+
+    "danceEvery": 1,
+    "scale": 1,
+    "singTime": 8,
+
+    "flipX": false,
+    "flipY": false,
+	"isPixel": false,
+
+	"healthIcon": {
+
+		"isPixel": false,
+        "flipX": false,
+
+		"offsets": [0, 0],
+		"scale": 1,
+        
+		"id": "purple-old"
+
+	},
+
+    "animations": [
+		{
+			"offsets": [0, 0],
+			"frameIndices": [],
+
+			"prefix": "specimen singLEFT",
+			"name": "singLEFT",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 12,
+			"assetPath": null
+		},
+		{
+			"offsets": [0, 0],
+			"frameIndices": [],
+
+			"prefix": "specimen idle",
+			"name": "idle",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 12,
+			"assetPath": null
+		},
+		{
+			"offsets": [0, 0],
+			"frameIndices": [],
+
+			"prefix": "specimen singRIGHT",
+			"name": "singRIGHT",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 12,
+			"assetPath": null
+		},
+		{
+			"offsets": [0, 0],
+			"frameIndices": [],
+            
+			"prefix": "specimen singUP",
+			"name": "singUP",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 12,
+			"assetPath": null
+		},
+		{
+			"offsets": [0, 0],
+			"frameIndices": [],
+
+			"prefix": "specimen singDOWN",
+			"name": "singDOWN",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 12,
+			"assetPath": null
+		}
+
+	]
+    
+}

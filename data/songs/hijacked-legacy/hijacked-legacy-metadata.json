@@ -1,6 +1,6 @@
 {
  "version": "2.2.4",
- "songName": "New Specimen",
+ "songName": "Hijacked (Legacy)",
  "artist": "hzDelta",
  "charter": "hzDelta",
  "divisions": 96,
@@ -12,7 +12,7 @@
   "altVocals": {  }
  },
  "playData": {
-  "songVariations": [  ],
+  "songVariations": [],
   "difficulties": [
    "easy",
    "normal",
@@ -20,12 +20,11 @@
   ],
   "characters": {
    "player": "bf",
-   "girlfriend": "gf",
-   "opponent": "purple",
+   "girlfriend": "",
+   "opponent": "brown-legacy",
    "instrumental": "",
    "altInstrumentals": [
-    "scrapped",
-    "legacy"
+    "redux"
    ],
    "opponentVocals": [
     "Opponent"
@@ -34,24 +33,24 @@
     "Player"
    ]
   },
-  "stage": "skeldNavHall",
+  "stage": "legacySkeldAdmin",
   "noteStyle": "funkin",
   "ratings": {
-   "easy": 3,
-   "hard": 5,
-   "normal": 4
+   "easy": 4,
+   "normal": 5,
+   "hard": 6
   },
   "album": "nsredux",
   "previewStart": 0,
   "previewEnd": 0
  },
- "generatedBy": "Friday Night Funkin' - v0.7.5",
+ "generatedBy": "Friday Night Funkin' - v0.8.1",
  "timeFormat": "ms",
  "timeChanges": [
   {
    "t": 0,
    "b": 0,
-   "bpm": 150,
+   "bpm": 180,
    "n": 4,
    "d": 4,
    "bt": [4, 4, 4, 4]

@@ -2,13 +2,13 @@ import funkin.modding.events.ScriptEvent;
 import funkin.play.PlayState;
 import funkin.play.stage.ScriptedStage;
 
-class SkeldNavStage extends ScriptedStage {
+class LegacyAdminStage extends ScriptedStage {
 
     // I'll re-add the RPC stuff after I figure out wtf is going on.. It was working pre-1.0.0. -hzDelta
 
     public function new() {
 
-        super('skeldNavHall');
+        super('legacySkeldAdmin');
 
     }
 
@@ -16,9 +16,8 @@ class SkeldNavStage extends ScriptedStage {
 
         super.onSongLoaded(event);
 
-        var hijackedSign = getNamedProp('hijackedSign');
-        var songID = PlayState.instance.currentSong?.id;
-        if (songID != 'hijacked' || songID != 'hijacked-legacy' && hijackedSign != null) hijackedSign.visible = false;
+        if (PlayState.instance.currentStage.getGirlfriend() != null) PlayState.instance.currentStage.getGirlfriend().visible = false;
+        // GF was never in the original Psych mod LOL -hzDelta
 
     }
     

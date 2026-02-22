@@ -1,0 +1,106 @@
+{
+    "version": "1.0.0",
+    "renderType": "sparrow",
+    "name": "Brown Impostor (Legacy)",
+    "generatedBy": "Manual (by hzDelta)",
+    "startingAnimation": "idle",
+    "assetPath": "characters/legacyBrownImp",
+
+    "offsets": [0, 0],
+    "cameraOffsets": [0, 40],
+
+    "danceEvery": 1,
+    "scale": 1,
+    "singTime": 8,
+
+    "flipX": false,
+    "flipY": false,
+	"isPixel": false,
+
+	"healthIcon": {
+
+		"isPixel": false,
+        "flipX": false,
+
+		"offsets": [0, 0],
+		"scale": 1,
+        
+		"id": "brown-old"
+
+	},
+
+    "animations": [
+		{
+			"offsets": [50, -5],
+			"frameIndices": [],
+
+			"prefix": "sing left",
+			"name": "singLEFT",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [0, 0],
+			"frameIndices": [],
+
+			"prefix": "idle",
+			"name": "idle",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [35, 0],
+			"frameIndices": [],
+
+			"prefix": "sing right",
+			"name": "singRIGHT",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [60, 19],
+			"frameIndices": [],
+            
+			"prefix": "sing up",
+			"name": "singUP",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 24,
+			"assetPath": null
+		},
+		{
+			"offsets": [55, -60],
+			"frameIndices": [],
+
+			"prefix": "sing down",
+			"name": "singDOWN",
+
+			"looped": false,
+			"flipX": false,
+			"flipY": false,
+
+			"frameRate": 24,
+			"assetPath": null
+		}
+
+	]
+    
+}

@@ -1,6 +1,6 @@
 {
   "title": "New Specimen REDUX",
-  "description": "/!\\ DON'T COMBINE WITH OTHER MODS /!\\\n\nFor API v0.7.0 and newer.",
+  "description": "A Skirmish on The Skeld.",
   "contributors": [
     {
       "name": "hzDelta",
@@ -9,11 +9,19 @@
     },
     {
       "name": "Carsten23455",
-      "role": "Playtester (PC)",
+      "role": "Playtester (Windows)",
       "url": "https://github.com/Carsten23455/"
+    },
+    {
+      "name": "RebelLotus",
+      "role": "Playtester (Mac)",
+      "url": "https://bsky.app/profile/r29905.bsky.social"
     }
   ],
+  "optionalDependencies": {
+    "PolusUtils": ">=1.0.0"
+  },
   "api_version": "0.8.0",
-  "mod_version": "1.0.1",
-  "license": "Apache-2.0"
+  "mod_version": "2.0.0",
+  "license": "CC BY-NC-ND 4.0"
 }

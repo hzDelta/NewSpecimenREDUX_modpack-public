@@ -14,7 +14,7 @@ Once the file finishes installing, extract the zip to the `mods` folder inside o
 
 Your installation folder should look something like this:
 
-```
+```txt
 -assets
 -manifest
 -plugins
@@ -34,7 +34,7 @@ Feel free to remove the `art` folder along with the `.gitattributes` and `README
     - ~~December 25th, 2025~~ *Out Now!*
 
 - v2.0.0 - Legacy Tracks + Official Mobile Port
-    - February, 2026
+    - ~~February 22nd, 2026~~ *Out Now!*
 
 - v3.0.0 - Remix Pack 1
     - TBA

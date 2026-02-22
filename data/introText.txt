@@ -1,20 +1,18 @@
 hzdelta.newgrounds.com--ng or bsky
 @poluspanic.bsky.app--periodic mod news since 2024
-straight outta twenty-three--let's do this
-where'd the cheese go--i dunno
+three years in the making--let's do this
 oughhh--i'm reduxing it
 pico mixes--maybe in a hotfix
 erect remixes--maybe in a hotfix
 coming soon--to polus panic!
 shoutout to the funkin crew--love y'all
-shoutout to shadow mario--thank you o>
 mods--:fat: react them
 consider my bones--bashed
-this time...--it's actually good?!
+this time...--it's actually good??
 from team specifunk--with love
 among us show news--please innersloth...
-ost release--coming soon (maybe)
-i should just append these?--eh, who cares
+ost release--coming soonish
+should i just append these?--eh, who cares
 v-slice--supremacy
 spongebob big guy--pants okay
 play--the skeld funkin' vs among sussies
@@ -35,7 +33,10 @@ purple says--lgbtq+ rights
 brown says--lgbtq+ rights
 hzdelta says--lgbtq+ rights
 cloudfare outage--fml bro
-pc exclusive intro text--hi everyone!
+windows exclusive intro text--hi everyone!
+mac exclusive intro text--hi everyone!
+linux exclusive intro text--hi everyone!
+mobile exclusive intro text--hi everyone!
 hijacked was originally--called crash course
 where's week #...--i demand answers
 in case of fire--keep playing
@@ -50,10 +51,13 @@ thank you shadow mario--we all say in unison
 kade engine port--no.
 p-slice port--no.
 psych engine port--no.
-fps plus port--no.
-codename engine port--maybe
+fps plus port--maybe
+codename engine port--no.
 mobile port--yes actually
 this git--cracks repos
 the end is neigh--wait
 the skeld funkin'--vs among sussies
 function onCreate();...--now what?
+eat it up--eat it eat it up
+remember to use polusutils--please
+i'm an ibispaint user--i can't do atlases :(

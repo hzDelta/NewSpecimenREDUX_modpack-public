@@ -1,0 +1,33 @@
+{
+  "version": "1.0.1",
+  "name": "Admin [Legacy]",
+  "cameraZoom": 0.9,
+  "props": [
+    {
+      "zIndex": 25,
+      "position": [-500, -800],
+      "scale": [1, 1],
+      "name": "bgBack",
+      "assetPath": "stages/legacySkeldAdmin/adminBG",
+      "scroll": [1, 1]
+    }
+  ],
+  "characters": {
+    "bf": {
+      "zIndex": 300,
+      "position": [770, 100],
+      "cameraOffsets": [-100, -100]
+    },
+    "dad": {
+      "zIndex": 200,
+      "position": [100, 100],
+      "cameraOffsets": [150, -100]
+    },
+    "gf": {
+      "zIndex": 100,
+      "cameraOffsets": [0, 0],
+      "position": [400, 130]
+    }
+  }
+}
+
