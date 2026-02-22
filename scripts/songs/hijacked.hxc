@@ -48,7 +48,7 @@ class HijackedRedux extends ScriptedSong {
 
         if (!initStuff) {
 
-            FunkinMemory.permanentCacheSound(Paths.image(TEASERIMG_PATH));
+            FunkinMemory.cacheTexture(Paths.image(TEASERIMG_PATH));
             FunkinMemory.permanentCacheSound(Paths.sound('hijacked_panicTeaser'));
 
             teaserSound = FunkinSound.load(Paths.sound('hijacked_panicTeaser'), 0.75, false, true);
